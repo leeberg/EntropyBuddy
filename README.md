@@ -1,6 +1,14 @@
 # EntropyBuddy
 .Net core cmdline util to get Shannon Entropy'ness of a file, and AES encrypt files!
 
+![](EntropyBuddy.png)
+
+Average Entropy of pre/post encryption of common document files
+![](entropy_pre_post.png)
+
+File Structure of .docx file Pre/Post Encryption
+![](docx_before_after_encrypt.png)
+
 ## Usage
 Application can be started with command line arguments or interactively.
 
