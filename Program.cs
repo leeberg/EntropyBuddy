@@ -17,6 +17,19 @@ namespace EntropyBuddy
 
             NETCore.Encrypt.Internal.AESKey aesKey = EncryptProvider.CreateAesKey();
 
+            string currentdatetime = (DateTime.Now.ToString("yyyy-dd-M-HH-mm-ss") + "-ENCRYPTKEY.log");
+            var keylogfile = File.Create(currentdatetime);
+
+
+            using (StreamWriter outputFile = new StreamWriter(keylogfile))
+            {
+                outputFile.WriteLine("Welcome to your EntropyBuddy Key Backup Log File!");
+                outputFile.WriteLine("AES Key: " + aesKey.Key);
+                outputFile.WriteLine("AES IV: " + aesKey.IV);
+            }
+
+
+
             if (arguments.Length == 0 || null == arguments)
             {
                 string text = "WELCOME to the Entropy Buddy@-----------------------------@You have started the util without params so we will be verbose!@Specify a mode of operation:@ a for Encryption@ b for EntropyCheck output JUST entropy value@ c for EntropyCheck/Encrypt/EntropyCheck@ d for EntropyCheck/Encrypt/EntropyCheck/Decrypt@ e for Cross-EntropyCheck@ f for Check/Encrypt/Check, and output Pre,Post values";
